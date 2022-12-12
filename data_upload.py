@@ -1,7 +1,7 @@
 # coding: utf-8
 
 '''
-FILE: blob_samples_directory_interface.py
+FILE: data_upload.py
 DESCRIPTION:
     This example shows how to perform common filesystem-like operations on a
     container. This includes uploading and downloading files to and from the
@@ -71,12 +71,12 @@ except KeyError:
 try:
   CONTAINER_NAME = sys.argv[1]
 except IndexError:
-  print('usage: directory_interface.py CONTAINER_NAME')
+  print('usage: data_upload.py CONTAINER_NAME  # data')
   print('error: the following arguments are required: CONTAINER_NAME')
   sys.exit(1)
 
 # Instantiate the DirectoryClient
 client = DirectoryClient(CONNECTION_STRING, CONTAINER_NAME)
 
-# Upload the data_from_drive directory to Azure blob container
-client.upload_dir('data_from_drive', '')
+# Upload the stocks_data directory to Azure blob container
+client.upload_dir('stocks_data', '')
