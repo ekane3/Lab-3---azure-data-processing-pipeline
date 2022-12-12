@@ -12,7 +12,7 @@ df7 = pd.read_csv('TESLA.csv')
 
 # merge csv files
 df = pd.concat([df1, df2, df3, df4, df5, df6, df7], ignore_index=True)
-
+print(df.shape)
 # save to csv
 df.to_csv('stocks.csv', index=False)
 
