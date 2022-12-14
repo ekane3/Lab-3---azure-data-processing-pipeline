@@ -1,5 +1,5 @@
 ---
-page_type: sample
+project type: Azure 
 languages:
   - python
 products:
@@ -17,10 +17,12 @@ The objective of this repository is to build a data pipeline that will ingest da
 
 Then we will couple Azure Databricks to the pipeline to perform some data analysis in a notebook taking data from Azure Data Warehouse.
 
-**Architecture :**
+## Architecture :  
 
 
-**Steps :**
+![Data architecture pipeline](Azure_data_pipeline.png)
+
+## Steps :
 
 - Step 1 : Create a script to upload the data to the data lake. The data is in CSV format and is stored in a folder called "stocks_data". The script will upload the data to a folder called "datalake" in the storage account.
 - Step 2 : Create a Batch Activity in Azure Data Factory to trasnform all csv files in the data lake to a single file called "stocks_data.csv" and store the file in the data lake.
