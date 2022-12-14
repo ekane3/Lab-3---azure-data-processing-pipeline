@@ -102,7 +102,7 @@ $ pip install -r requirements.txt
 - Set environment variables :
 
 ```shell
-$ SET AZURE_CONNECTION_STRING="..."
+$ SET AZURE_STORAGE_CONNECTION_STRING="..."
 ```  
 
 Then run the following command :
