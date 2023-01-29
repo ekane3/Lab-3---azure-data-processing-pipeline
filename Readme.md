@@ -81,7 +81,7 @@ except KeyError:
 try:
   CONTAINER_NAME = sys.argv[1]
 except IndexError:
-  print('usage: data_upload.py CONTAINER_NAME  # data')
+  print('usage: python data_upload.py CONTAINER_NAME  ')
   print('error: the following arguments are required: CONTAINER_NAME')
   sys.exit(1)
 
@@ -93,11 +93,13 @@ client.upload_dir('stocks_data', '')
 
 
 ```
-To run the script, you need to install the requirements, set environment variables :
+To run the script, you need to install the requirements, set environment variables and do the following :
 - Install requirements :
 ```shell
 $ pip install -r requirements.txt
 ``` 
+
+- Create a storage account in Azure and get the connection string. Then create a container in the storage account and get the container name. ( in our case the container name is "datalake").
 
 - Set environment variables :
 
@@ -107,11 +109,11 @@ $ SET AZURE_STORAGE_CONNECTION_STRING="..."
 
 Then run the following command :
 ```shell
-python upload_data.py datalake
+python data_upload.py datalake
 ```
 
 
-- Step 2 : Create a Batch Activity in Azure Data Factory to trasnform all csv files in the data lake to a single file called "stocks_data.csv" and store the file in the data lake.
+- Step 2 : Create a Batch Activity in Azure Data Factory to transform all csv files in the data lake to a single file called "stocks_data.csv" and store the file in the data lake.
 
 - Step 3 : Create a copy data activity in Azure Data Factory to copy the transformed file from the SQL datalake to a table called "stocks_data_copy" in the SQL database.
 

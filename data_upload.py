@@ -71,12 +71,12 @@ except KeyError:
 try:
   CONTAINER_NAME = sys.argv[1]
 except IndexError:
-  print('usage: data_upload.py CONTAINER_NAME  # data')
+  print('usage: python data_upload.py CONTAINER_NAME  # after the AZURE_STORAGE_CONNECTION_STRING environment variable is set')
   print('error: the following arguments are required: CONTAINER_NAME')
   sys.exit(1)
 
 # Instantiate the DirectoryClient
 client = DirectoryClient(CONNECTION_STRING, CONTAINER_NAME)
 
-# Upload the stocks_data directory to Azure blob container
+# Upload the files from stocks_data directory to Azure blob container
 client.upload_dir('stocks_data', '')
